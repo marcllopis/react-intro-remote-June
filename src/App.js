@@ -3,6 +3,33 @@ import './App.css';
 
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
+import Student from './components/student/Student';
+
+
+let students = [
+  {
+    studentName: 'Sawi',
+    studentCountry: 'Thailand',
+    studentPicture: 'https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg'
+  },
+  {
+    studentName: 'Roberto',
+    studentCountry: 'Romania',
+    studentPicture: 'https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg'
+  },
+  {
+    studentName: 'Pablo',
+    studentCountry: 'Argentina',
+    studentPicture: 'https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg'
+  },
+  {
+    studentName: 'Carlos',
+    studentCountry: 'Portugal',
+    studentPicture: 'https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg'
+  },
+]
+
+
 
 
 function App() {
@@ -10,38 +37,16 @@ function App() {
     <div>
       <Navbar />
       <div className="content">
-        <div className="student-container">
-          <h1>Roberto</h1>
-          <h2>From Romania</h2>
-          <img
-            alt="roberto"
-            className="img-student"
-            src="https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg" />
-        </div>
-        <div className="student-container">
-          <h1>Carlos</h1>
-          <h2>From Portugal</h2>
-          <img
-            alt="roberto"
-            className="img-student"
-            src="https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg" />
-        </div>
-        <div className="student-container">
-          <h1>Pablo</h1>
-          <h2>From Argentina</h2>
-          <img
-            alt="roberto"
-            className="img-student"
-            src="https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg" />
-        </div>
-        <div className="student-container">
-          <h1>Adam</h1>
-          <h2>From Romania</h2>
-          <img
-            alt="roberto"
-            className="img-student"
-            src="https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg" />
-        </div>
+        {
+          students.map((student,index) =>
+            <Student
+              studentName={student.studentName}
+              studentCountry={student.studentCountry}
+              studentPicture={student.studentPicture}
+              key={index}
+            />
+          )
+        }
       </div>
       <Footer />
     </div>

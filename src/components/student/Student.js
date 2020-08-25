@@ -5,7 +5,7 @@ function Student(props) {
   return (
     <div className="student-container">
       <h1>{props.studentName}</h1>
-      <h2>From: {props.studentCountry}</h2>
+      <h2>From: {props.studentCountry + ' hello'}</h2>
       <img
         alt={props.studentName}
         className="img-student"

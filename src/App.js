@@ -3,51 +3,16 @@ import './App.css';
 
 import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
-import Student from './components/student/Student';
+import MainContent from './components/mainContent/MainContent';
 
-
-let students = [
-  {
-    studentName: 'Sawi',
-    studentCountry: 'Thailand',
-    studentPicture: 'https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg'
-  },
-  {
-    studentName: 'Roberto',
-    studentCountry: 'Romania',
-    studentPicture: 'https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg'
-  },
-  {
-    studentName: 'Pablo',
-    studentCountry: 'Argentina',
-    studentPicture: 'https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg'
-  },
-  {
-    studentName: 'Carlos',
-    studentCountry: 'Portugal',
-    studentPicture: 'https://i.ytimg.com/vi/OOFGdRmN70k/maxresdefault.jpg'
-  },
-]
-
-
-
+import {studentList} from './data/studentList/StudentList';
+import {texts} from './data/texts/texts'
 
 function App() {
   return (
     <div>
       <Navbar />
-      <div className="content">
-        {
-          students.map((student,index) =>
-            <Student
-              studentName={student.studentName}
-              studentCountry={student.studentCountry}
-              studentPicture={student.studentPicture}
-              key={index}
-            />
-          )
-        }
-      </div>
+      <MainContent students={studentList} texts={texts} />
       <Footer />
     </div>
   );
